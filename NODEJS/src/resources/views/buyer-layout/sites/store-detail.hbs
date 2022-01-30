@@ -1,0 +1,130 @@
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bread-inner">
+                    <ul class="bread-list">
+                        <li><a href="/">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="#">Cửa hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+<!-- Product Style -->
+<section class="product-area shop-sidebar shop section">
+    <div class="container">
+        <div class="detail-store-image"></div>
+        <div class="detail-store-info"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-12">
+                <div class="shop-sidebar sidebar-sticky">
+                    <!-- Single Widget -->
+                    <div class="single-widget category">
+                        <h3 class="title">Danh mục</h3>
+                        <ul class="category-list">
+                            {{#each ProductType}}
+                            {{#if products}}
+                            <li class="item-category"><a href="#" onclick="goToByScroll('{{bodauTiengViet productTypeName}}')">
+                                    {{productTypeName}}
+                                </a></li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <!--/ End Single Widget -->
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-4 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Shop Top -->
+                        <div class="shop-top">
+                            <div class="shop-shorter">
+                                <div class="single-shorter">
+                                    <label>Tìm kiếm </label>
+                                    <input class="search-product" id="search-product" name="search-product"
+                                        placeholder="Tìm kiếm sản phẩm của cửa hàng" type="search">
+                                </div>
+                            </div>
+                            <ul class="view-mode">
+                            </ul>
+                        </div>
+                        <!--/ End Shop Top -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card-view-item">
+                            {{#each ProductType}}
+                            {{#if products}}
+                            <div class="row product-type-title" id="{{bodauTiengViet productTypeName}}">
+                                {{productTypeName}}
+                            </div>
+                            {{#each products}}
+                            <div class="row item-product">
+                                <div class="col-auto product-image">
+                                    <img src="https://via.placeholder.com/60x60" alt="">
+                                </div>
+                                <div class="col product-name">{{productName}}</div>
+                                <div class="col-auto product-more">
+                                    <div class="row">
+                                        <div class="col-auto product-price">{{formatCurrency
+                                            productPrice}}đ/{{productUnit}}</div>
+                                        <div class="col-auto add-to-cart">
+                                            <button class="btn btn-add-card" onclick="AddCartItems({{productId}})"> <i class="ti-plus"></i></button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/if}}
+                            {{/each}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-12">
+                <div class="shop-sidebar">
+                    <!-- Single Widget -->
+                    <div class="single-widget category">
+                        <h3 class="title">Cửa Hàng</h3>
+                    </div>
+                    <!--/ End Single Widget -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var sections = document.getElementsByClassName("product-type-title");
+    var navList = document.getElementsByClassName("category-list")[0].children;
+    window.addEventListener("scroll", () => {
+        let activeSection = null;
+
+        for (let i = 0; i < sections.length; i++) {
+            let section = sections[i];
+
+            if (window.scrollY >= section.offsetTop) {
+                activeSection = navList[i];
+            }
+        }
+
+        for (const i of navList) {
+            i.classList.remove("active");
+        }
+
+        if (activeSection&&!activeSection.classList.contains("active")) {
+            activeSection.classList.add("active");
+        }
+    });
+</script>
+<!--/ End Product Style 1  -->

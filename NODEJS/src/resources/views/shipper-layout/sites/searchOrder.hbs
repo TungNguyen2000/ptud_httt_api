@@ -1,0 +1,31 @@
+<div class="container">
+    <table id="demo" style="width:100%" class="table">
+        <thead>
+            <tr>
+                <th style="text-align: center; vertical-align: middle;">Shipperid</th>
+                <th style="text-align: center; vertical-align: middle;">orderprice</th>
+                <th style="text-align: center; vertical-align: middle;">buyer id</th>
+                <th style="text-align: center; vertical-align: middle;">orderdate</th>
+                <th style="text-align: center; vertical-align: middle;">orderaddress</th>
+                <th style="text-align: center; vertical-align: middle;">orderphone</th>
+                <th style="text-align: center; vertical-align: middle;">order id</th>
+                <th style="text-align: center; vertical-align: middle;">order quantity</th>
+
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {{#each NewOrders}}
+            <tr>
+                <td><button class="btn">choose this</button></td>
+                <td style="text-align: center; vertical-align: middle;">{{orderPrice}}</td>
+                <td style="text-align: center; vertical-align: middle;">{{buyerID}}</td>
+                <td style="text-align: center; vertical-align: middle;">{{orderDate}}</td>
+                <td style="text-align: center; vertical-align: middle;">{{orderAddress}}</td>
+                <td style="text-align: center; vertical-align: middle;">{{orderPhone}}</td>
+                <td style="text-align: center; vertical-align: middle;">{{orderId}}</td>
+                <td style="text-align: center; vertical-align: middle;">{{orderQuantity}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

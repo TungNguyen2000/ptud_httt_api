@@ -1,0 +1,13 @@
+.account {
+  margin-top: 30px;
+}
+.user-name-fix {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.user-edit {
+  color: #666666;
+}

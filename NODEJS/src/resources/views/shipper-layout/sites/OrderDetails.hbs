@@ -1,0 +1,27 @@
+ 
+    <div class="container">
+        <h2>Order Details</h2>
+        <table id="demo" style="width:100%" class="table">
+            <thead>
+                <tr>
+                    <th style="text-align: center; vertical-align: middle;">Order Id</th>
+                    <th style="text-align: center; vertical-align: middle;">Product Name</th>
+                    <th style="text-align: center; vertical-align: middle;">Quantity</th>
+                    <th style="text-align: center; vertical-align: middle;">discount</th>
+                    <th style="text-align: center; vertical-align: middle;">final price</th>
+
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                {{#each OrderDetail}}
+                <tr>
+                    {{#each this}}
+                        <td style="text-align: center; vertical-align: middle;">{{this}}</td>
+                    {{/each}}
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+    </div>
+   

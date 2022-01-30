@@ -1,0 +1,48 @@
+<section>
+<div class="container">
+    <h2>List of Orders</h2>
+        <table id="demo" style="width:100%" class="table">
+            <thead>
+                <tr>
+                    <th style="text-align: center; vertical-align: middle;">Orderid</th>
+                    <th style="text-align: center; vertical-align: middle;">orderquantity</th>
+                    <th style="text-align: center; vertical-align: middle;">orderprice</th>
+                    <th style="text-align: center; vertical-align: middle;">orderdate</th>
+                    <th style="text-align: center; vertical-align: middle;">orderaddress</th>
+                    <th style="text-align: center; vertical-align: middle;">orderphone</th>
+                    <th style="text-align: center; vertical-align: middle;">Buyerid</th>
+                    <th style="text-align: center; vertical-align: middle;">Shipperid</th>
+                    <th style="text-align: center; vertical-align: middle;">Order Details</th>
+                    <th style="text-align: center; vertical-align: middle;">order deliver history</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                {{#each OrderList}}
+                <tr>
+                    {{#each this}}
+                        <td style="text-align: center; vertical-align: middle;">{{this}}</td>
+                    
+                    {{/each}}
+
+                    <td style="text-align: center; vertical-align: middle;"> <form action="OrderDetails">
+                         <input type="text" value="{{this.orderId}}" size="1" name="orderdetailid" readonly> 
+                         <button type="submit" value="orderdetail">link</button> 
+                         </form>
+                    </td>
+                    <td style="text-align: center; vertical-align: middle;"> <form action="OrderHistory"> 
+                        <input type="text" value="{{this.orderId}}" size="1" name="orderhistoryid" readonly>
+                        <button type="submit" value ="orderhistory">link</button> 
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+</div>
+
+<div>
+    
+    
+    
+</div>
+</section>
